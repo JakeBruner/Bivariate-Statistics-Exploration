@@ -9,7 +9,7 @@
 \usepackage[hidelinks]{hyperref}  % most people dont know of this :3
 
 \usepackage{subfig}
-\usepackage[margin=0.5in]{geometry}
+\usepackage[textwidth]{geometry}
 
 % \usepackage[backend=bibtex,style=verbose-ibid]{biblatex}
 % \addbibresource{citations.bib}
@@ -78,11 +78,11 @@ heres an example of an image
 \section{Plots}
 \begin{figure}[htbp]
 \centering
-\subfloat[Dataset I]{\label{fig:a}\includegraphics[width=0.45\linewidth]{dataset1.png}}\qquad
-\subfloat[Dataset II]{\label{fig:b}\includegraphics[width=0.45\linewidth]{dataset2.png}}\\
-\subfloat[Dataset III]{\label{fig:c}\includegraphics[width=0.45\textwidth]{dataset3.png}}\qquad%
-\subfloat[Dataset IV]{\label{fig:d}\includegraphics[width=0.45\textwidth]{dataset4.png}}%
-\caption{Plot of Datasets I-IV — X against Y with Lin. Reg.}
+\subfloat[Plot of ]{\label{fig:a}\includegraphics[width=0.45\linewidth]{dataset1.png}}\qquad
+\subfloat[subtitle of subfigure b]{\label{fig:b}\includegraphics[width=0.45\linewidth]{dataset2.png}}\\
+\subfloat[subtitle of subfigure c]{\label{fig:c}\includegraphics[width=0.45\textwidth]{dataset3.png}}\qquad%
+\subfloat[subtitle of subfigure d]{\label{fig:d}\includegraphics[width=0.45\textwidth]{dataset4.png}}%
+\caption{My beautiful multifigure ((a) subfig a; (b) subfig b; (c) subfig c; (d) subfig d)}
 \label{fig:myfig}
 \end{figure}
 
