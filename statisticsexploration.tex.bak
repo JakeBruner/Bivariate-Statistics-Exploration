@@ -90,15 +90,15 @@ Calculating these values for each dataset we obtain:
 \centering
 \begin{tabular}{|l|cc|cc|cc|cc|}
 \hline
-\textbf{}         & \multicolumn{2}{c|}{\textbf{I}}              & \multicolumn{2}{c|}{\textbf{II}}             & \multicolumn{2}{c|}{\textbf{III}}            & \multicolumn{2}{c|}{\textbf{IV}}             \\ \hline
-\textbf{Data set} & \multicolumn{1}{c|}{\textit{x}} & \textit{y} & \multicolumn{1}{c|}{\textit{x}} & \textit{y} & \multicolumn{1}{c|}{\textit{x}} & \textit{y} & \multicolumn{1}{c|}{\textit{x}} & \textit{y} \\ \hline
+\textbf{Data set}         & \multicolumn{2}{c|}{\textbf{I}}              & \multicolumn{2}{c|}{\textbf{II}}             & \multicolumn{2}{c|}{\textbf{III}}            & \multicolumn{2}{c|}{\textbf{IV}}             \\ \hline
+\textbf{Parameter} & \multicolumn{1}{c|}{\textit{x}} & \textit{y} & \multicolumn{1}{c|}{\textit{x}} & \textit{y} & \multicolumn{1}{c|}{\textit{x}} & \textit{y} & \multicolumn{1}{c|}{\textit{x}} & \textit{y} \\ \hline
 \textbf{Mean}     & \multicolumn{1}{c|}{9.0}        & 7.5        & \multicolumn{1}{c|}{9.0}        & 7.5        & \multicolumn{1}{c|}{9.0}        & 7.5        & \multicolumn{1}{c|}{9.0}        & 7.5        \\ \hline
 \end{tabular}
 \end{figure}
 
 \subsection{Interpretation}
 
-After computing the mean for each, it's clear that the 
+After computing the mean for each, it's clear that the means for each $x, y$ of the respective datasets are equal. Without any other prior knowledge, one might infer that these datasets have a similar center, save variation or spread. This is because the mean doesn't provide information about 
 
 \section{Plots}
 \begin{figure}[htbp]
