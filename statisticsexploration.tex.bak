@@ -9,7 +9,7 @@
 \usepackage[hidelinks]{hyperref}  % most people dont know of this :3
 
 \usepackage{subfig}
-\usepackage[textwidth]{geometry}
+\usepackage[margin=0.7in]{geometry}
 
 % \usepackage[backend=bibtex,style=verbose-ibid]{biblatex}
 % \addbibresource{citations.bib}
@@ -75,14 +75,25 @@ heres an example of an image
 ############
 \fi
 
+\section{Calculating Mean of X, Y for Datasets}
+The mean is a commonly used measure of center for a given statistic. To calculate the mean, we can use the following formula: for a given indexed set of values, the mean is written:
+\[
+\bar{x} = \frac{1}{N} \sum_{i \in I} x_i
+\]
+Where N is the length of the data set. In other words, the mean is the sum of each value divided by the number of values for a given parameter.
+
+Calculating these values for each dataset we obtain:
+
+
+
 \section{Plots}
 \begin{figure}[htbp]
 \centering
-\subfloat[Plot of ]{\label{fig:a}\includegraphics[width=0.45\linewidth]{dataset1.png}}\qquad
-\subfloat[subtitle of subfigure b]{\label{fig:b}\includegraphics[width=0.45\linewidth]{dataset2.png}}\\
-\subfloat[subtitle of subfigure c]{\label{fig:c}\includegraphics[width=0.45\textwidth]{dataset3.png}}\qquad%
-\subfloat[subtitle of subfigure d]{\label{fig:d}\includegraphics[width=0.45\textwidth]{dataset4.png}}%
-\caption{My beautiful multifigure ((a) subfig a; (b) subfig b; (c) subfig c; (d) subfig d)}
+\subfloat[Dataset I]{\label{fig:a}\includegraphics[width=0.45\linewidth]{dataset1.png}}\qquad
+\subfloat[Dataset II]{\label{fig:b}\includegraphics[width=0.45\linewidth]{dataset2.png}}\\
+\subfloat[Dataset III]{\label{fig:c}\includegraphics[width=0.45\textwidth]{dataset3.png}}\qquad%
+\subfloat[Dataset IV]{\label{fig:d}\includegraphics[width=0.45\textwidth]{dataset4.png}}%
+\caption{Plot of Datasets I-IV — X against Y with Lin. Reg.}
 \label{fig:myfig}
 \end{figure}
 
