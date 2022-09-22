@@ -76,15 +76,29 @@ heres an example of an image
 \fi
 
 \section{Calculating Mean of X, Y for Datasets}
+\subsection{Method}
 The mean is a commonly used measure of center for a given statistic. To calculate the mean, we can use the following formula: for a given indexed set of values, the mean is written:
 \[
-\bar{x} = \frac{1}{N} \sum_{i \in I} x_i
+\bar{x} = \frac{1}{N} \sum_{i = 1}^{N} x_i
 \]
-Where N is the length of the data set. In other words, the mean is the sum of each value divided by the number of values for a given parameter.
+Where N is the length of the data set. In other words, the mean is the sum of each value divided by the number of values for a given parameter. \\
+
 
 Calculating these values for each dataset we obtain:
 
+\begin{figure}[ht]
+\centering
+\begin{tabular}{|l|cc|cc|cc|cc|}
+\hline
+\textbf{}         & \multicolumn{2}{c|}{\textbf{I}}              & \multicolumn{2}{c|}{\textbf{II}}             & \multicolumn{2}{c|}{\textbf{III}}            & \multicolumn{2}{c|}{\textbf{IV}}             \\ \hline
+\textbf{Data set} & \multicolumn{1}{c|}{\textit{x}} & \textit{y} & \multicolumn{1}{c|}{\textit{x}} & \textit{y} & \multicolumn{1}{c|}{\textit{x}} & \textit{y} & \multicolumn{1}{c|}{\textit{x}} & \textit{y} \\ \hline
+\textbf{Mean}     & \multicolumn{1}{c|}{9.0}        & 7.5        & \multicolumn{1}{c|}{9.0}        & 7.5        & \multicolumn{1}{c|}{9.0}        & 7.5        & \multicolumn{1}{c|}{9.0}        & 7.5        \\ \hline
+\end{tabular}
+\end{figure}
 
+\subsection{Interpretation}
+
+After computing the mean for each, it's clear that the 
 
 \section{Plots}
 \begin{figure}[htbp]
