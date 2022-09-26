@@ -77,12 +77,15 @@ heres an example of an image
 
 \section{Introduction}
 
+In 1973, British mathematician Francis Anscombe formulated four datasets, each with 11 points, in order to demonstrate shortcomings of common statistical measures.
+
+
 In the real-world, statistics are often viewed as objective measures of datasets. Because of this, we often draw important, life-changing decisions on their basis alone. For instance, pharmacists employ statistics when researching new treatments for disease. Luckily for us, statistics often \textit{are} helpful and insightful in disseminating trends and patterns in data. But, again, it is all too easy to forget their short-comings.
 
 In this paper, I will explore the ways in which statistical measures can be misleading in interpreting the significance of, trends in, or general patterns within data.
 
-\section{Mean of X, Y for Datasets}
-\subsection{Method}
+\section{The Statistical Mean}
+\subsection{Computation}
 The mean is a commonly used measure of center for a given statistic. To calculate the mean, we can use the following formula: for a given indexed set of values, the mean is written:
 \[
 \bar{x} = \frac{1}{N} \sum_{i = 1}^{N} x_i
@@ -107,14 +110,15 @@ Calculating these values for each dataset we obtain:
 After computing the mean for each, it's clear that the means for each $x, y$ of the respective datasets are equal. Without any other prior knowledge, one might infer that these datasets have a similar center, save variation or spread. This is because the mean doesn't provide information about the variation or spread of the data. Despite this, however, one might assume it to be a reasonable assumption that these datasets and parameters might be highly similar, especially because they match in two variables.
 
 \section{Exploring Other Statistical Measures}
+\subsection{Computation}
 
-In addition to computing the mean, there are a number of other tools that provide insight into the properties of a dataset. For instance, the variance and standard deviation convey a measure of the 'spread' or variation in a dataset. Similarly, 'Peterson's Correlation Coefficient' often denoted with its square, $r^2$, is meaasure of the \textit{linear} coorelation of two parameters. Values of $r$ range from -1 to 1, with numbers farther from zero denoting stronger coorelation. A closely related notion is the covarience, which measures the linear coorelation, but with a magnitude not necessarily between $(-1, 1)$. These measures are related like so: $r = \frac{cov(x, y)}{\sigma_x \sigma_y}
+In addition to computing the mean, there are a number of other tools that provide insight into the properties of a dataset. For instance, the \textbf{\textit{variance}} ($\sigma^2$) and \textbf{\textit{standard deviation}} ($\sigma$) convey a measure of the 'spread' or variation in a dataset. Similarly, \textbf{\textit{'Peterson's Correlation Coefficient'}} often denoted with its square, $r^2$, is measure of the \textit{linear} coorelation of two parameters. (Unsquared) values of $r$ range from -1 to 1, with numbers farther from zero denoting stronger coorelation. A closely related notion is the \textbf{\textit{covarience}}, which measures the linear coorelation, but with a magnitude not necessarily between $(-1, 1)$. These measures are related like so: $r = \frac{cov(x, y)}{\sigma_x \sigma_y}$ where $\sigma$ denotes the standard deviation.
 
 \begin{figure}[]
 \centering
 \begin{tabular}{l|c|c|c|c|c|c|c|c|}
 \cline{2-9}
-                                     & \textbf{$\bar{x}$} & \textbf{$\bar{y}$} & \textbf{$\sigma_x$} & \textbf{$\sigma_y$} & \textbf{$\sigma_x^2$} & \textbf{$\sigma_y^2$} & \textbf{$r^2$} & \textbf{$cov(x, y)$} \\ \hline
+                                     & \textbf{$\bar{x}$} & \textbf{$\bar{y}$} & \textbf{$\sigma_x^2$} & \textbf{$\sigma_y^2$} & \textbf{$\sigma_x$} & \textbf{$\sigma_y$} & \textbf{$r^2$} & \textbf{$cov(x, y)$} \\ \hline
 \multicolumn{1}{|l|}{\textbf{set 1}} & 9.0                & 7.5              & 11.0                & 4.13                & 3.32                  & 2.03                  & 0.67           & 5.5                  \\ \hline
 \multicolumn{1}{|l|}{\textbf{set 2}} & 9.0                & 7.5              & 11.0                & 4.13                & 3.32                  & 2.03                  & 0.67           & 5.5                  \\ \hline
 \multicolumn{1}{|l|}{\textbf{set 3}} & 9.0                & 7.5              & 11.0                & 4.12                & 3.32                  & 2.03                  & 0.67           & 5.5                  \\ \hline
@@ -122,9 +126,9 @@ In addition to computing the mean, there are a number of other tools that provid
 \end{tabular}
 \end{figure}
 
-\section{Plots}
+\subsection{Plotting Data}
 
-Using the python packages \texttt{matplotlib} and \texttt{numpy}, we can plot each dataset like so:
+Using the python packages \texttt{matplotlib}, \texttt{numpy} and \texttt{pandas}, we can plot each dataset (as a dataframe contained in the array \texttt{dfs}). A linear regression is fit to the data using the \texttt{np.polyfit()} method with an exponent of 1. This is accomplished like so:
 
 \begin{lstlisting}
 for i in range(4):
@@ -132,8 +136,8 @@ for i in range(4):
   reg = np.polyfit(dfs[i]['x'], dfs[i]['y'], 1)
   rval = stats.pearsonr(dfs[i]['x'], dfs[i]['y'])[0]
   plt.plot(dfs[i]['x'], np.polyval(reg, dfs[i]['x']), 'r', label='y={:.2f}x+{:.2f}\n r^2 = {:.2f}'.format(reg[0], reg[1], rval**2))
-  plt.xlabel('X')
-  plt.ylabel('Y')
+  plt.xlabel('x')
+  plt.ylabel('y')
   plt.legend()
   plt.savefig('dataset{}.png'.format(i+1))
 \end{lstlisting}
@@ -142,12 +146,16 @@ After doing so, we get the following interesting results:
 
 \begin{figure}[htbp]
 \centering
-\subfloat[Dataset I]{\label{fig:a}\includegraphics[width=0.45\linewidth]{dataset1.png}}\qquad
-\subfloat[Dataset II]{\label{fig:b}\includegraphics[width=0.45\linewidth]{dataset2.png}}\\
-\subfloat[Dataset III]{\label{fig:c}\includegraphics[width=0.45\textwidth]{dataset3.png}}\qquad%
-\subfloat[Dataset IV]{\label{fig:d}\includegraphics[width=0.45\textwidth]{dataset4.png}}%
+\subfloat[Dataset I]{\label{fig:I}\includegraphics[width=0.45\linewidth]{dataset1.png}}\qquad
+\subfloat[Dataset II]{\label{fig:II}\includegraphics[width=0.45\linewidth]{dataset2.png}}\\
+\subfloat[Dataset III]{\label{fig:III}\includegraphics[width=0.45\textwidth]{dataset3.png}}\qquad%
+\subfloat[Dataset IV]{\label{fig:IV}\includegraphics[width=0.45\textwidth]{dataset4.png}}%
 \caption{Plot of Datasets I-IV — X against Y with Lin. Reg.}
-\label{fig:myfig}
+\label{fig:1}
 \end{figure}
+
+\subsection{Interpretation}
+
+Upon examination of the computed statistical measures (std, varience, cov, etc.), the naive conclusion would be that each dataset contains extremely similar data and that similar conclusions could be drawn from each. For instance, the $r^2$ value for each, $0.67$, indicates that there is a weak-to-moderate, positive correlation between the variables, and might imply that linear fits to each dataset would have a similar degree of inaccuracy. However, this notion is \textit{categorically refuted} on even a cursory glance at the graphs. In Figure~\ref{fig:1}, we see that each dataset is very distinct in its scatterplot pattern. In Figure~\ref{fig:I}, its clear that the linear fit to the data 
 
 \end{document}
