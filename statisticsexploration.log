@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.8.28) (preloaded format=pdflatex 2022.9.26)  26 SEP 2022 17:23
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.8.28) (preloaded format=pdflatex 2022.9.26)  26 SEP 2022 18:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -509,85 +509,75 @@ Underfull \hbox (badness 10000) in paragraph at lines 89--91
 [1
 
 {C:/Users/Jake/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
-
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 115.
-
-<dataset-1.png, id=60, 462.528pt x 346.896pt>
+<dataset-1.png, id=75, 462.528pt x 346.896pt>
 File: dataset-1.png Graphic file (type png)
 <use dataset-1.png>
 Package pdftex.def Info: dataset-1.png  used on input line 149.
 (pdftex.def)             Requested size: 223.34712pt x 167.51389pt.
-<dataset-2.png, id=62, 462.528pt x 346.896pt>
+<dataset-2.png, id=77, 462.528pt x 346.896pt>
 File: dataset-2.png Graphic file (type png)
 <use dataset-2.png>
 Package pdftex.def Info: dataset-2.png  used on input line 150.
 (pdftex.def)             Requested size: 223.34712pt x 167.51389pt.
-<dataset-3.png, id=63, 462.528pt x 346.896pt>
+<dataset-3.png, id=78, 462.528pt x 346.896pt>
 File: dataset-3.png Graphic file (type png)
 <use dataset-3.png>
 Package pdftex.def Info: dataset-3.png  used on input line 151.
 (pdftex.def)             Requested size: 223.34712pt x 167.51389pt.
-<dataset-4.png, id=64, 462.528pt x 346.896pt>
+<dataset-4.png, id=79, 462.528pt x 346.896pt>
 File: dataset-4.png Graphic file (type png)
 <use dataset-4.png>
 Package pdftex.def Info: dataset-4.png  used on input line 152.
 (pdftex.def)             Requested size: 223.34712pt x 167.51389pt.
-[2] [3 <./dataset-1.png> <./dataset-2.png> <./dataset-3.png> <./dataset-4.png>]
-<dataset-res-1.png, id=108, 462.528pt x 346.896pt>
+ [2]
+[3 <./dataset-1.png> <./dataset-2.png> <./dataset-3.png> <./dataset-4.png>]
+<dataset-res-1.png, id=123, 462.528pt x 346.896pt>
 File: dataset-res-1.png Graphic file (type png)
 <use dataset-res-1.png>
-Package pdftex.def Info: dataset-res-1.png  used on input line 183.
+Package pdftex.def Info: dataset-res-1.png  used on input line 188.
 (pdftex.def)             Requested size: 223.34712pt x 167.51389pt.
-<dataset-res-2.png, id=109, 462.528pt x 346.896pt>
+<dataset-res-2.png, id=124, 462.528pt x 346.896pt>
 File: dataset-res-2.png Graphic file (type png)
 <use dataset-res-2.png>
-Package pdftex.def Info: dataset-res-2.png  used on input line 184.
+Package pdftex.def Info: dataset-res-2.png  used on input line 189.
 (pdftex.def)             Requested size: 223.34712pt x 167.51389pt.
-<dataset-res-3.png, id=110, 462.528pt x 346.896pt>
+<dataset-res-3.png, id=125, 462.528pt x 346.896pt>
 File: dataset-res-3.png Graphic file (type png)
 <use dataset-res-3.png>
-Package pdftex.def Info: dataset-res-3.png  used on input line 185.
+Package pdftex.def Info: dataset-res-3.png  used on input line 190.
 (pdftex.def)             Requested size: 223.34712pt x 167.51389pt.
-<dataset-res-4.png, id=111, 462.528pt x 346.896pt>
+<dataset-res-4.png, id=126, 462.528pt x 346.896pt>
 File: dataset-res-4.png Graphic file (type png)
 <use dataset-res-4.png>
-Package pdftex.def Info: dataset-res-4.png  used on input line 186.
+Package pdftex.def Info: dataset-res-4.png  used on input line 191.
 (pdftex.def)             Requested size: 223.34712pt x 167.51389pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 180--192
+Underfull \hbox (badness 10000) in paragraph at lines 185--197
 \OT1/cmr/m/n/10.95 Obtaining: 
  []
 
 [4 <./dataset-res-1.png> <./dataset-res-2.png> <./dataset-res-3.png> <./dataset
 -res-4.png>]
-
-LaTeX Warning: Reference `fig:table' on page 5 undefined on input line 195.
-
-[5] (statisticsexploration.aux)
-
-LaTeX Warning: There were undefined references.
-
+<datatable.png, id=152, 443.40656pt x 234.1247pt>
+File: datatable.png Graphic file (type png)
+<use datatable.png>
+Package pdftex.def Info: datatable.png  used on input line 210.
+(pdftex.def)             Requested size: 288.21085pt x 152.17924pt.
+ [5 <./datatable.png>] (statisticsexploration.aux)
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
-
-Package rerunfilecheck Warning: File `statisticsexploration.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `statisticsexploration.out':
-(rerunfilecheck)             Before: 2F619168046E288D1CC0995494D4D618;1405
-(rerunfilecheck)             After:  38EEC474931AF4C10E07E38CBEFBD260;1789.
+Package rerunfilecheck Info: File `statisticsexploration.out' has not changed.
+(rerunfilecheck)             Checksum: 1590C4A8DFFFB3DEB92CF85BFBFC742E;1873.
  ) 
 Here is how much of TeX's memory you used:
- 14007 strings out of 475389
- 220435 string characters out of 2786818
- 777856 words of memory out of 3000000
- 35159 multiletter control sequences out of 15000+600000
+ 14022 strings out of 475389
+ 220672 string characters out of 2786818
+ 785856 words of memory out of 3000000
+ 35175 multiletter control sequences out of 15000+600000
  478311 words of font info for 62 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 72i,11n,79p,1271b,1287s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ 72i,11n,79p,1274b,1287s stack positions out of 10000i,1000n,20000p,200000b,80000s
 <C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Progra
 m Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKT
 eX/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Program Files/MiKTeX/fonts/t
@@ -601,9 +591,9 @@ c/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/
 cmr9.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:
 /Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Fil
 es/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on statisticsexploration.pdf (5 pages, 322668 bytes).
+Output written on statisticsexploration.pdf (5 pages, 369466 bytes).
 PDF statistics:
- 220 PDF objects out of 1000 (max. 8388607)
- 50 named destinations out of 1000 (max. 500000)
- 121 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 233 PDF objects out of 1000 (max. 8388607)
+ 49 named destinations out of 1000 (max. 500000)
+ 150 words of extra memory for PDF output out of 10000 (max. 10000000)
 

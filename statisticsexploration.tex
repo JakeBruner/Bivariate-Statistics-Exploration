@@ -77,20 +77,20 @@ heres an example of an image
 
 \section{Introduction}
 
-In the real-world, statistics are often employed as objective measures of data. Because of this, we often draw important, life-changing decisions on their basis alone. For instance, pharmacists employ statistics when researching new treatments for disease, or economists might draw on statistics to understand trends in consumer spending. Luckily for us, statistics often \textit{are} helpful and insightful in disseminating patterns in data. But, again, it is all too easy to forget their short-comings.
+In the real-world, statistics are often employed as objective measures of data. Because of this, we often draw important decisions on their basis alone. For instance, pharmacists employ statistics when researching new treatments for disease, or economists might draw on statistics to understand trends in consumer spending. Luckily for us, statistics often \textit{are} helpful and insightful in disseminating patterns in data. But, again, it is all too easy to forget their short-comings.
 
-In 1973, British mathematician Francis Anscombe formulated four datasets, each with 11 points, in order to demonstrate the pitfalls of many common statistical measures. In this paper, I will explore the ways in which these statistical measures can be misleading in interpreting the significance of, trends in, or validity of data using Anscombe's 'quartet' of points to highlight their oversimplification.
+In 1973, British mathematician Francis Anscombe formulated four datasets, each with 11 points, in order to demonstrate the pitfalls of many common statistical measures. (See Table~\ref{fig:datas} in the Appendix, page \pageref{Appendix}.) In this paper, I will explore the ways in which these statistical measures can be misleading in interpreting the significance of, trends in, or validity of data using Anscombe's 'quartet' of points to highlight their oversimplification.
 
 \section{The Statistical Mean}
 \subsection{Computation}
-The mean is a commonly used measure of center for a given statistic. To calculate the mean, we can use the following formula: for a given indexed set of values, the mean is written:
+The mean is a commonly used measure of center for a given dataset. To calculate the mean, we can use the following formula: for a given indexed set of values, the mean is written:
 \[
 \bar{x} = \frac{1}{N} \sum_{i = 1}^{N} x_i
 \]
 Where N is the length of the data set. In other words, the mean is the sum of each value divided by the number of values for a given parameter. \\
 
 
-Calculating these values for each dataset we obtain:
+Calculating these values for each dataset in Anscombe's Quartet we obtain:
 
 \begin{figure}[ht]
 \centering
@@ -100,19 +100,19 @@ Calculating these values for each dataset we obtain:
 \textbf{Parameter} & \multicolumn{1}{c|}{\textit{x}} & \textit{y} & \multicolumn{1}{c|}{\textit{x}} & \textit{y} & \multicolumn{1}{c|}{\textit{x}} & \textit{y} & \multicolumn{1}{c|}{\textit{x}} & \textit{y} \\ \hline
 \textbf{Mean}     & \multicolumn{1}{c|}{9.0}        & 7.5        & \multicolumn{1}{c|}{9.0}        & 7.5        & \multicolumn{1}{c|}{9.0}        & 7.5        & \multicolumn{1}{c|}{9.0}        & 7.5        \\ \hline
 \end{tabular}
-\caption{Computed Means of Dataset I-IV}
+\caption{Computed Means of $x$ and $y$ in Datasets I through IV}
 \end{figure}
 
 \subsection{Interpretation}
 
-After computing the mean for each, it's clear that the means for each $x, y$ of the respective datasets are equal. Without any other prior knowledge, one might infer that these datasets have a similar center, save variation or spread. This is because the mean doesn't provide information about the variation or spread of the data. Despite this, however, one might assume it to be a reasonable assumption that these datasets and parameters might be highly similar, especially because they match in two variables.
+After computing, it's clear that the means for each $x, y$ of the respective datasets are equal. Without any other prior knowledge, one might infer that these datasets have a similar center, notwithstanding variation or spread. This is because the mean doesn't provide information about the variation or spread of the data. Despite this, however, one might assume it to be a reasonable assumption that these datasets and parameters might be highly similar, especially because they match in both variables. If these corresponded to real world data, it might be inferred that these means would be the approximate \textit{expected} result if another trial were to be performed. However, this is contested upon further inspection.
 
 \section{Exploring Other Statistical Measures}
 \subsection{Computation}
 
-In addition to computing the mean, there are a number of other tools that provide insight into the properties of a dataset. For instance, the \textbf{\textit{variance}} ($\sigma^2$) and \textbf{\textit{standard deviation}} ($\sigma$) convey a measure of the 'spread' or variation in a dataset. Similarly, \textbf{\textit{'Peterson's Correlation Coefficient'}} ($r$) often denoted with its square, $r^2$, is measure of the \textit{linear} coorelation of two parameters. (Unsquared) values of $r$ range from -1 to 1, with numbers farther from zero denoting stronger coorelation. A closely related notion is the \textbf{\textit{covariance}}, which measures the linear coorelation, but with a magnitude not necessarily between $(-1, 1)$. These measures are related like so: $r = \frac{cov(x, y)}{\sigma_x \sigma_y}$ where $\sigma$ denotes the standard deviation.
+In addition to computing the mean, there are a number of other tools that provide insight into the properties of a dataset. For instance, the \textbf{\textit{variance}} ($\sigma^2$) and \textbf{\textit{standard deviation}} ($\sigma$) convey a measure of the 'spread' or variation in a dataset. Similarly, \textbf{\textit{'Peterson's Correlation Coefficient'}} ($r$) often denoted with its square, $r^2$, is measure of the \textit{linear} coorelation of two parameters. (Unsquared) values of $r$ range from -1 to 1, with numbers farther from zero denoting stronger coorelation. A closely related notion is the \textbf{\textit{covariance}}, which measures the linear coorelation, but with a magnitude not necessarily between $(-1, 1)$. These measures are related like so: $r = \frac{cov(x, y)}{\sigma_x \sigma_y}$ where $\sigma$ denotes the standard deviation. The computed values of these for Anscombe's Quartet can be found below:
 
-\begin{figure}[]
+\begin{figure}[ht]
 \centering
 \begin{tabular}{l|c|c|c|c|c|c|c|c|}
 \cline{2-9}
@@ -132,17 +132,17 @@ Using the python packages \texttt{matplotlib}, \texttt{scipy}, \texttt{numpy} an
 
 \begin{lstlisting}
 for i in range(4):
-  dfs[i].plot.scatter(x='x', y='y') 
-  reg = np.polyfit(dfs[i]['x'], dfs[i]['y'], 1)
-  rval = stats.pearsonr(dfs[i]['x'], dfs[i]['y'])[0]
-  plt.plot(dfs[i]['x'], np.polyval(reg, dfs[i]['x']), 'r', label='y={:.2f}x+{:.2f}\n r^2 = {:.2f}'.format(reg[0], reg[1], rval**2))
+  dfs[i].plot.scatter(x='x', y='y')  # create scatterplot of data
+  reg = np.polyfit(dfs[i]['x'], dfs[i]['y'], 1)  # compute regression
+  rval = stats.pearsonr(dfs[i]['x'], dfs[i]['y'])[0]  # compute r
+  plt.plot(dfs[i]['x'], np.polyval(reg, dfs[i]['x']), 'r', label='y={:.2f}x+{:.2f}\n r^2 = {:.2f}'.format(reg[0], reg[1], rval**2)) # draw regression
   plt.xlabel('x')
   plt.ylabel('y')
-  plt.legend()
+  plt.legend()  # add legend
   plt.savefig('dataset{}.png'.format(i+1))
 \end{lstlisting}
 
-In so doing, we get the following interesting results (Figure~\ref{fig:plots}):
+In so doing, we get the following interesting results (Figure~\ref{fig:plots}).
 
 \begin{figure}[ht]
 \centering
@@ -156,10 +156,18 @@ In so doing, we get the following interesting results (Figure~\ref{fig:plots}):
 
 \subsection{Interpretation}
 
-Upon examination of the computed statistical measures (std, variance, cov, etc.), the naive conclusion would be that each dataset contains extremely similar data and that similar conclusions could be drawn from each. For instance, the $r^2$ value for each, $0.67$, indicates that there is a weak-to-moderate, positive correlation between the variables, and might imply that linear fits to each dataset would have a similar degree of inaccuracy. However, this notion is \textit{categorically refuted} on even a cursory glance at the graphs. In Figure~\ref{fig:plots}, we see that each dataset is very distinct in its scatterplot pattern. In Figure~\ref{fig:I}, its clear that the linear fit to the data indicates weak-moderate, positive correlation, with a healthy amount of deviation from the trendline. This graph's, the most straightforward of the four, statistical measures indicate helpful information about the data. For instance, the $r^2$ value of $0.67$ reinforces the weak, positive spread outlined above. Similarly, the covariance of $5.5$ and the variance $\sigma_x^2 = 11.0,\ \sigma_y^2 = 4.13$ reinforce the visual intuition of this dataset having a healthy amount of spread from the means $\bar{x}, \bar{y}$. 
-As we transition to Figure~\ref{fig:II}, we see a markedly different trend in the data. Visually, the scatterplot indicates an quadratic trend in $x$, indicating that the $y$ values may vary as the negative square of $x$. Despite this, our linear trendlines (from a least squares regression) provides a line of 'best fit' equal to Figure~\ref{fig:I}. Additionally, the other statistical measures of dataset II are exactly equivalent to that of dataset I, despite the visual interpretation being different. For instance, one might interpret the $r^2$ value in Figure~\ref{fig:I} as indicating the moderate (seemingly random) variation from the trendline, whereas in Figure~\ref{fig:II}, we see the datapoints follow exactly the (not random) curve of a quadratic, despite still having the same $r^2$. If one were to perform a polynomial regression (perhaps taking the logarithm to linearize the polynomial exponent, then performing a least squares regression), the resulting trendcurve would likely be an extremely close fit to the data---a fact not illustrated by these statistical measures. 
-In Figure~\ref{fig:III}, we see a different outcome where, despite displaying a very linear trend, the computed statistics and trendline are greatly affected by a single outlier. Because of this, we see the trendline having the incorrect slope to match the (linear) trend in the rest of the data. Despite this outlier not being indicated in the computed statistical measures, viewing the graph demonstrates the highly linear relationship between x and y, which would be easily illustrated by removing the outlier or otherwise explaining it in the methodology. This fact highlights the difference between dataset III and dataset I, where, despite having the same statistical measures, Figure~\ref{fig:I} displays almost uniformly random deviation from the line of best fit compared to Figure~\ref{fig:III} which has a nicely behaved deviation given by the intersection of another trendline if the sole outlier were to be removed.
-In Figure~\ref{fig:IV}, dataset IV, we see how the statistical measures fail to indicate that most of the measured independent '$y$' values coorespond to a single dependent '$x$' value, namely $8$. Notwithstanding this, we can still obtain a 'regression line' of sorts, which attempts to interpret this data as being linear. Clearly, from the scatterplot, this regression is wishful thinking \textit{at best}, and complete nonsense at worst. Despite the other datasets indicating some relationship/coorelation between $x$ and $y$, the grouping of $y$s at $x=8$ indicates no such  obvious relationship. Despite this, the numerical methods of a linear regression can still be performed, wrongfully indicating much similarity between dataset IV and datasets I-III.
+Upon examination of the computed statistical measures (std, variance, cov, etc.), the naive conclusion would be that each dataset contains extremely similar data and that similar conclusions could be drawn from each. For instance, the $r^2$ value for each, $0.67$, indicates that there is a moderately-weak, positive correlation between the variables, and might imply that linear fits to each dataset would have a similar degree of inaccuracy. However, this notion is \textit{categorically refuted} on even a cursory glance at the graphs. In Figure~\ref{fig:plots}, we see that each dataset is very distinct in its scatterplot pattern. In Figure~\ref{fig:I}, its clear that the linear fit to the data indicates weak-moderate, positive correlation, with a healthy amount of deviation from the trendline. This graph's, the most straightforward of the four, statistical measures indicate helpful information about the data. For instance, the $r^2$ value of $0.67$ reinforces the weak, positive spread outlined above. Similarly, the covariance of $5.5$ and the variance $\sigma_x^2 = 11.0,\ \sigma_y^2 = 4.13$ reinforce the visual intuition of this dataset having a healthy amount of spread from the means $\bar{x}, \bar{y}$. 
+
+	As we transition to Figure~\ref{fig:II}, we see a markedly different trend in the data. 
+Visually, the scatterplot indicates an quadratic trend in $x$, indicating that the $y$ values may vary proportional to the negative square of $x$. 
+Despite this, our linear trendline (from a least squares regression) provide a line of 'best fit' equal to that of Figure~\ref{fig:I}, despite the very different appearance of the data. 
+Additionally, the other statistical measures of dataset II are exactly equivalent to that of dataset I, despite the visual interpretation being different. For instance, one might interpret the $r^2$ value in Figure~\ref{fig:I} as indicating the moderate (seemingly random) variation from the trendline, whereas in Figure~\ref{fig:II}, we see the datapoints follow exactly the (not random) curve of a quadratic, despite still having the same $r^2$. 
+If one were to perform a polynomial regression on set II (perhaps taking the logarithm to linearize the polynomial exponent, then performing a least squares regression), the resulting trendcurve would likely be an extremely close fit to the data---a fact not illustrated by these statistical measures. 
+
+	In Figure~\ref{fig:III}, we see a different outcome where, despite displaying a very linear trend, the computed statistics and trendline are greatly affected by a single outlier. Because of this, we see the trendline having the incorrect slope to match the (linear) trend in the rest of the data. Despite this outlier not being indicated in the computed statistical measures, viewing the graph demonstrates the highly linear relationship between x and y, which would be easily illustrated by removing the outlier or otherwise explaining it in the methodology. This fact highlights the difference between dataset III and dataset I, where, despite having the same statistical measures, Figure~\ref{fig:I} displays almost uniformly random deviation from the line of best fit compared to Figure~\ref{fig:III} which has a nicely behaved deviation given by the intersection of another trendline if the sole outlier were to be removed.
+This discrepancy may be a result of the priority of a least squares regression, \textit{optimizing the squared distance to a regression line}. This method is biased towards extrema in the data, because it is optimizing the \textit{squared} deviation, abnormally increasing the influence of the outlier in III.
+
+	In Figure~\ref{fig:IV}, dataset IV, we see how the statistical measures fail to indicate that most of the measured independent '$y$' values coorespond to a single dependent '$x$' value, namely $8$. Notwithstanding this, we can still obtain a 'regression line' of sorts, which attempts to interpret this data as being linear. Clearly, from the scatterplot, this regression is wishful thinking \textit{at best}, and complete nonsense at worst. Despite the other datasets indicating some relationship/coorelation between $x$ and $y$, the grouping of $y$s at $x=8$ indicates no such  obvious relationship. Despite this, the numerical methods of a linear regression can still be performed, wrongfully indicating much similarity between dataset IV and datasets I-III.
 
 \section{Additional Areas to Explore}
 \subsection{Residual Plots}
@@ -168,14 +176,11 @@ Other tools are available in statistics to help better draw conclusions about un
 
 \begin{lstlisting}
 for i in range(4):
-  # same code from before
-  
-  # add points corresponding to difference from reg with color given by magnitude
-  plt.scatter(dfs[i]['x'], dfs[i]['y'] - np.polyval(reg, dfs[i]['x']), c=(dfs[i]['y'] - np.polyval(reg, dfs[i]['x'])), cmap='seismic', vmin=-3, vmax=3,s=10)
-  # add red dashed line at 0
-  plt.axhline(y=0, color='r', linestyle='--', linewidth=1)
-  # add colorbar
-  plt.colorbar()
+  #  + code from before
+  residuals = dfs[i]['y'] - np.polyval(reg, dfs[i]['x']) # compute residuals
+  plt.scatter(dfs[i]['x'], residuals, c=residuals, cmap='seismic', vmin=-3, vmax=3,s=15)  # add residuals
+  plt.axhline(y=0, color='r', linestyle='--', linewidth=1)  # add red line
+  plt.colorbar()  # add colorbar
 \end{lstlisting}
 Obtaining:
 \begin{figure}[ht]
@@ -188,12 +193,24 @@ Obtaining:
 \label{fig:rplots}
 \end{figure}
 \linebreak
-After viewing the residual plots, it's clear that scrutinizing the pattern of residuals could be an insightful method at determining the reliability of a regression. For instance, one could compare the residuals of datasets II and II with that of dataset I to determine that the computed regressions aren't appropriate to datasets II and III because there are clear patterns in the residuals. In Figure~\ref{fig:rI}, there seems to be a healthy randomness in the distribution of residuals, corresponding to the natural variation in the parameters from the trendline. Whereas in Figures~\ref{fig:rII}-\ref{fig:rIII}, there is a quadratic and linear pattern respectively in the residuals. Hence, one could infer that there would be a better fit to each dataset by considering other factors (a non-linear regression and outlier influence here respectively, for instance). Similarly the residuals in Figure~\ref{fig:rIV} confirms that this regression line is a poor model for the data, since almost every datapoint occurs at $x = 8$, creating a vertical column of residuals.
+After viewing the residual plots, it's clear that scrutinizing the pattern of residuals could be an insightful method at determining the reliability of a regression. For instance, one could compare the  datasets II and II with that of dataset I by determining that the computed regressions aren't appropriate to datasets II and III because there are clear patterns in the residuals. In Figure~\ref{fig:rI}, there seems to be a healthy randomness in the distribution of residuals, corresponding to the natural variation in the parameters from the trendline. Whereas in Figures~\ref{fig:rII}-\ref{fig:rIII}, there is a quadratic and linear pattern respectively in the residuals. Hence, one could infer that there would be a better fit to each dataset by considering other factors (a non-linear regression and outlier influence here respectively, for instance). Similarly the residuals in Figure~\ref{fig:rIV} confirms that this regression line is a poor model for the data, since almost every datapoint occurs at $x = 8$, creating a vertical column of residuals and an absence of such everywhere else.
 
 \subsection{Arguments for Graphing Before Interpretation}
 
-To expand this investigation, another important question is whether one must graph data before analyzing it. From the results of this exploration, one could argue that graphs provide visual insight that cannot be captured within measures like a mean, standard deviation, or $r^2$ value. We see that all four datasets evaluate to the same statistical values in Table~\ref{fig:table} despite having  markedly different graphs. For this reason, for datasets where graphing is an option, one would conclude that graphing should absolutely be employed before interpreting statistics of a dataset. However, in certain applications where graphing isn't as easy (for instance multi-variate data), it might be out of necessity that statistical measures are interpreted without visual aid. However, as evidenced by this exploration, this may lead to misinterpretation of the results.
+To expand this investigation, another important question is whether one must graph data before analyzing. From the results of this exploration, one could argue that graphs provide visual insight that cannot be captured within measures like a mean, standard deviation, or $r^2$ value. We see that all four datasets evaluate to the same statistical values in Table~\ref{fig:table} despite having  markedly different graphs. For this reason, for datasets where graphing is an option, one would conclude that graphing should absolutely be employed before interpreting statistics of a dataset. However, in certain applications where graphing isn't as easy (for instance multi-variate data), it might be out of necessity that statistical measures are interpreted without visual aid. However, as evidenced by this exploration, this may lead to misinterpretation of the results.
 
 \section{Conclusion}
+
+Despite the interpretation of statistics as 'objective measures,' this exploration highlights how certain datasets may be misinterpreted and misunderstood with statistical analysis because of hidden factors. Before being able to visually interpret the data, relying on the computed statistics (mean, $\sigma,\ \sigma^2,$ cov, $r^2$) alone may not be sufficient to draw substantiated conclusions. The conclusion to be drawn from this exploration is that these measures \textit{necessarily} have to simplify the dataset, causing a loss of information which can conceal certain facts about the data. This is because, no matter what, these statistics reduce an entire set of data into a single number, often constrained to a certain range. Hence, statisticians must rely on crude methods (e.g., graphing a scatterplot, or visually inspecting the numbers for outliers) before drawing conclusions from a dataset, if they want to ensure the validity of their conclusions. In many instances, these reductionist measures \textit{are} reliable and indicate true facts about a dataset (for instance, in dataset I, most of the statistics convey useful facts), but it's important to confirm these within the context of the entire dataset.
+
+\section{Appendix} \label{Appendix}
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[scale=.65]{datatable} 
+\caption{Ascombe's Quartet -- Datasets I through IV}
+\label{fig:datas}
+\end{center}
+\end{figure}
 
 \end{document}
