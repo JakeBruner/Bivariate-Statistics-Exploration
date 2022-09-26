@@ -157,11 +157,26 @@ In so doing, we get the following interesting results (Figure~\ref{fig:plots}):
 
 Upon examination of the computed statistical measures (std, variance, cov, etc.), the naive conclusion would be that each dataset contains extremely similar data and that similar conclusions could be drawn from each. For instance, the $r^2$ value for each, $0.67$, indicates that there is a weak-to-moderate, positive correlation between the variables, and might imply that linear fits to each dataset would have a similar degree of inaccuracy. However, this notion is \textit{categorically refuted} on even a cursory glance at the graphs. In Figure~\ref{fig:plots}, we see that each dataset is very distinct in its scatterplot pattern. In Figure~\ref{fig:I}, its clear that the linear fit to the data indicates weak-moderate, positive correlation, with a healthy amount of deviation from the trendline. This graph's, the most straightforward of the four, statistical measures indicate helpful information about the data. For instance, the $r^2$ value of $0.67$ reinforces the weak, positive spread outlined above. Similarly, the covariance of $5.5$ and the variance $\sigma_x^2 = 11.0,\ \sigma_y^2 = 4.13$ reinforce the visual intuition of this dataset having a healthy amount of spread from the means $\bar{x}, \bar{y}$. 
 As we transition to Figure~\ref{fig:II}, we see a markedly different trend in the data. Visually, the scatterplot indicates an quadratic trend in $x$, indicating that the $y$ values may vary as the negative square of $x$. Despite this, our linear trendlines (from a least squares regression) provides a line of 'best fit' equal to Figure~\ref{fig:I}. Additionally, the other statistical measures of dataset II are exactly equivalent to that of dataset I, despite the visual interpretation being different. For instance, one might interpret the $r^2$ value in Figure~\ref{fig:I} as indicating the moderate (seemingly random) variation from the trendline, whereas in Figure~\ref{fig:II}, we see the datapoints follow exactly the (not random) curve of a quadratic, despite still having the same $r^2$. If one were to perform a polynomial regression (perhaps taking the logarithm to linearize the polynomial exponent, then performing a least squares regression), the resulting trendcurve would likely be an extremely close fit to the data---a fact not illustrated by these statistical measures. 
-In Figure~\ref{fig:III}, we see a different outcome where, despite displaying a very linear trend, the computed statistics and trendline are greatly affected by a single outlier. Because of this, we see the trendline having the incorrect slope to match the (linear) trend in the rest of the data. Despite this outlier not being indicated in the computed statistical measures, viewing the graph demonstrates the highly linear relationship between x and y, which would be easily illustrated by removing the outlier or otherwise explaining it in the methodology. This fact highights the differnce between dataset III and dataset I, where, despite having the same statistical measures, Figure~\ref{fig:I} displays almost uniformly random deviation from the line of best fit compared to Figure~\ref{fig:III} which has a nicely behaved deviation given by the intersection of another trendline if the sole outlier were to be removed.
-In Figure~\ref{fig:IV}, we see how the 
+In Figure~\ref{fig:III}, we see a different outcome where, despite displaying a very linear trend, the computed statistics and trendline are greatly affected by a single outlier. Because of this, we see the trendline having the incorrect slope to match the (linear) trend in the rest of the data. Despite this outlier not being indicated in the computed statistical measures, viewing the graph demonstrates the highly linear relationship between x and y, which would be easily illustrated by removing the outlier or otherwise explaining it in the methodology. This fact highlights the difference between dataset III and dataset I, where, despite having the same statistical measures, Figure~\ref{fig:I} displays almost uniformly random deviation from the line of best fit compared to Figure~\ref{fig:III} which has a nicely behaved deviation given by the intersection of another trendline if the sole outlier were to be removed.
+In Figure~\ref{fig:IV}, dataset IV, we see how the statistical measures fail to indicate that most of the measured independent '$y$' values coorespond to a single dependent '$x$' value, namely $8$. Notwithstanding this, we can still obtain a 'regression line' of sorts, which attempts to interpret this data as being linear. Clearly, from the scatterplot, this regression is wishful thinking \textit{at best}, and complete nonsense at worst. Despite the other datasets indicating some relationship/coorelation between $x$ and $y$, the grouping of $y$s at $x=8$ indicates no such  obvious relationship. Despite this, the numerical methods of a linear regression can still be performed, wrongfully indicating much similarity between dataset IV and datasets I-III.
 
-\section{Exploring Other Techniques}
+\section{Additional Areas to Explore}
+\subsection{Residual Plots}
 
+Other tools are available in statistics to help better draw conclusions about unintuitive datasets like Ascombe's Quartet. One such method is the use of residuals when plotting a regression. By slightly modifing the code above, one can run:
+
+\begin{lstlisting}
+for i in range(4):
+  # same code from before
+  
+  # add points corresponding to difference from reg with color given by magnitude
+  plt.scatter(dfs[i]['x'], dfs[i]['y'] - np.polyval(reg, dfs[i]['x']), c=(dfs[i]['y'] - np.polyval(reg, dfs[i]['x'])), cmap='seismic', vmin=-3, vmax=3,s=10)
+  # add red dashed line at 0
+  plt.axhline(y=0, color='r', linestyle='--', linewidth=1)
+  # add colorbar
+  plt.colorbar()
+\end{lstlisting}
+Obtaining:
 \begin{figure}[ht]
 \centering
 \subfloat[Dataset I]{\label{fig:rI}\includegraphics[width=0.45\linewidth]{dataset-res-1.png}}\qquad
@@ -171,5 +186,11 @@ In Figure~\ref{fig:IV}, we see how the
 \caption{Residuals Plot of Datasets I-IV — X against Y with Lin. Reg.}
 \label{fig:rplots}
 \end{figure}
+\linebreak
+After viewing the residual plots, it's clear that scrutinizing the pattern of residuals could be an insightful method at determining the reliability of a regression. For instance, one could compare the residuals of datasets II and II with that of dataset I to determine that the computed regressions aren't appropriate to datasets II and III because there are clear patterns in the residuals. In Figure~\ref{fig:rI}, there seems to be a healthy randomness in the distribution of residuals, corresponding to the natural variation in the parameters from the trendline. Whereas in Figures~\ref{fig:rII}-\ref{fig:rIII}, there is a quadratic and linear pattern respectively in the residuals. Hence, one could infer that there would be a better fit to each dataset by considering other factors (a non-linear regression and outlier influence here respectively, for instance). Similarly the residuals in Figure~\ref{fig:rIV} confirms that this regression line is a poor model for the data, since almost every datapoint occurs at $x = 8$, creating a vertical column of residuals.
+
+\subsection{Arguments for Graphing Before Interpretation}
+
+To expand this investigaion, another important question is whether one must graph data before analyzing it
 
 \end{document}
