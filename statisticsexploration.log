@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.8.28) (preloaded format=pdflatex 2022.9.26)  26 SEP 2022 14:12
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.8.28) (preloaded format=pdflatex 2022.9.26)  26 SEP 2022 14:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -502,7 +502,7 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 57.
 (C:\Program Files\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Underfull \hbox (badness 10000) in paragraph at lines 92--94
+Underfull \hbox (badness 10000) in paragraph at lines 89--91
 
  []
 
@@ -511,27 +511,27 @@ Underfull \hbox (badness 10000) in paragraph at lines 92--94
 {C:/Users/Jake/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 117.
+               Default added (so using `tbp') on input line 114.
 
 <dataset1.png, id=52, 433.62pt x 289.08pt>
 File: dataset1.png Graphic file (type png)
 <use dataset1.png>
-Package pdftex.def Info: dataset1.png  used on input line 149.
+Package pdftex.def Info: dataset1.png  used on input line 146.
 (pdftex.def)             Requested size: 223.34712pt x 148.8977pt.
 <dataset2.png, id=54, 433.62pt x 289.08pt>
 File: dataset2.png Graphic file (type png)
 <use dataset2.png>
-Package pdftex.def Info: dataset2.png  used on input line 150.
+Package pdftex.def Info: dataset2.png  used on input line 147.
 (pdftex.def)             Requested size: 223.34712pt x 148.8977pt.
 <dataset3.png, id=55, 433.62pt x 289.08pt>
 File: dataset3.png Graphic file (type png)
 <use dataset3.png>
-Package pdftex.def Info: dataset3.png  used on input line 151.
+Package pdftex.def Info: dataset3.png  used on input line 148.
 (pdftex.def)             Requested size: 223.34712pt x 148.8977pt.
 <dataset4.png, id=56, 433.62pt x 289.08pt>
 File: dataset4.png Graphic file (type png)
 <use dataset4.png>
-Package pdftex.def Info: dataset4.png  used on input line 152.
+Package pdftex.def Info: dataset4.png  used on input line 149.
 (pdftex.def)             Requested size: 223.34712pt x 148.8977pt.
 [2] [3 <./dataset1.png> <./dataset2.png> <./dataset3.png> <./dataset4.png>]
 (statisticsexploration.aux)
@@ -541,11 +541,11 @@ Package rerunfilecheck Info: File `statisticsexploration.out' has not changed.
 Here is how much of TeX's memory you used:
  13936 strings out of 475389
  219298 string characters out of 2786818
- 770856 words of memory out of 3000000
+ 772856 words of memory out of 3000000
  35113 multiletter control sequences out of 15000+600000
  478311 words of font info for 62 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 72i,11n,79p,910b,1287s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ 72i,11n,79p,1266b,1287s stack positions out of 10000i,1000n,20000p,200000b,80000s
 <C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Progra
 m Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKT
 eX/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Program Files/MiKTeX/fonts/t
@@ -559,7 +559,7 @@ c/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/
 cmr9.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:
 /Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Fil
 es/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on statisticsexploration.pdf (3 pages, 222276 bytes).
+Output written on statisticsexploration.pdf (3 pages, 222920 bytes).
 PDF statistics:
  160 PDF objects out of 1000 (max. 8388607)
  29 named destinations out of 1000 (max. 500000)
