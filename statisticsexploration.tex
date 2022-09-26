@@ -108,9 +108,38 @@ After computing the mean for each, it's clear that the means for each $x, y$ of 
 
 \section{Exploring Other Statistical Measures}
 
-In addition to computing the mean, there are a number of other tools that provide insight into the properties of a dataset. 
+In addition to computing the mean, there are a number of other tools that provide insight into the properties of a dataset. For instance, the variance and standard deviation convey a measure of the 'spread' or variation in a dataset. Similarly, 'Peterson's Correlation Coefficient' often denoted with its square, $r^2$, is meaasure of the \textit{linear} coorelation of two parameters. Values of $r$ range from -1 to 1, with numbers farther from zero denoting stronger coorelation. A closely related notion is the covarience, which measures the linear coorelation, but with a magnitude not necessarily between $(-1, 1)$. These measures are related like so: $r = \frac{cov(x, y)}{\sigma_x \sigma_y}$ where $\sigma$ denotes the standard deviation.
+
+\begin{figure}[]
+\centering
+\begin{tabular}{l|c|c|c|c|c|c|c|c|}
+\cline{2-9}
+                                     & \textbf{$\bar{x}$} & \textbf{$\bar{y}$} & \textbf{$\sigma_x^2$} & \textbf{$\sigma_y^2$} & \textbf{$\sigma_x$} & \textbf{$\sigma_y$} & \textbf{$r^2$} & \textbf{$cov(x, y)$} \\ \hline
+\multicolumn{1}{|l|}{\textbf{set 1}} & 9.0                & 7.5              & 11.0                & 4.13                & 3.32                  & 2.03                  & 0.67           & 5.5                  \\ \hline
+\multicolumn{1}{|l|}{\textbf{set 2}} & 9.0                & 7.5              & 11.0                & 4.13                & 3.32                  & 2.03                  & 0.67           & 5.5                  \\ \hline
+\multicolumn{1}{|l|}{\textbf{set 3}} & 9.0                & 7.5              & 11.0                & 4.12                & 3.32                  & 2.03                  & 0.67           & 5.5                  \\ \hline
+\multicolumn{1}{|l|}{\textbf{set 4}} & 9.0                & 7.5              & 11.0                & 4.12                & 3.32                  & 2.03                  & 0.67           & 5.5                  \\ \hline
+\end{tabular}
+\end{figure}
 
 \section{Plots}
+
+Using the python packages \texttt{matplotlib} and \texttt{numpy}, we can plot each dataset like so:
+
+\begin{lstlisting}
+for i in range(4):
+  dfs[i].plot.scatter(x='x', y='y') 
+  reg = np.polyfit(dfs[i]['x'], dfs[i]['y'], 1)
+  rval = stats.pearsonr(dfs[i]['x'], dfs[i]['y'])[0]
+  plt.plot(dfs[i]['x'], np.polyval(reg, dfs[i]['x']), 'r', label='y={:.2f}x+{:.2f}\n r^2 = {:.2f}'.format(reg[0], reg[1], rval**2))
+  plt.xlabel('X')
+  plt.ylabel('Y')
+  plt.legend()
+  plt.savefig('dataset{}.png'.format(i+1))
+\end{lstlisting}
+
+After doing so, we get the following interesting results:
+
 \begin{figure}[htbp]
 \centering
 \subfloat[Dataset I]{\label{fig:a}\includegraphics[width=0.45\linewidth]{dataset1.png}}\qquad
