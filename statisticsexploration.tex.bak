@@ -75,7 +75,13 @@ heres an example of an image
 ############
 \fi
 
-\section{Calculating Mean of X, Y for Datasets}
+\section{Introduction}
+
+In the real-world, statistics are often viewed as objective measures of datasets. Because of this, we often draw important, life-changing decisions on their basis alone. For instance, pharmacists employ statistics when researching new treatments for disease. Luckily for us, statistics often \textit{are} helpful and insightful in disseminating trends and patterns in data. But, again, it is all too easy to forget their short-comings.
+
+In this paper, I will explore the ways in which statistical measures can be misleading in interpreting the significance of, trends in, or general patterns within data.
+
+\section{Mean of X, Y for Datasets}
 \subsection{Method}
 The mean is a commonly used measure of center for a given statistic. To calculate the mean, we can use the following formula: for a given indexed set of values, the mean is written:
 \[
@@ -98,7 +104,11 @@ Calculating these values for each dataset we obtain:
 
 \subsection{Interpretation}
 
-After computing the mean for each, it's clear that the means for each $x, y$ of the respective datasets are equal. Without any other prior knowledge, one might infer that these datasets have a similar center, save variation or spread. This is because the mean doesn't provide information about 
+After computing the mean for each, it's clear that the means for each $x, y$ of the respective datasets are equal. Without any other prior knowledge, one might infer that these datasets have a similar center, save variation or spread. This is because the mean doesn't provide information about the variation or spread of the data. Despite this, however, one might assume it to be a reasonable assumption that these datasets and parameters might be highly similar, especially because they match in two variables.
+
+\section{Exploring Other Statistical Measures}
+
+In addition to computing the mean, there are a number of other tools that provide insight into the properties of a dataset. 
 
 \section{Plots}
 \begin{figure}[htbp]
