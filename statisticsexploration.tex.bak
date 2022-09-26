@@ -122,6 +122,7 @@ In addition to computing the mean, there are a number of other tools that provid
 \multicolumn{1}{|l|}{\textbf{set 3}} & 9.0                & 7.5              & 11.0                & 4.12                & 3.32                  & 2.03                  & 0.67           & 5.5                  \\ \hline
 \multicolumn{1}{|l|}{\textbf{set 4}} & 9.0                & 7.5              & 11.0                & 4.12                & 3.32                  & 2.03                  & 0.67           & 5.5                  \\ \hline
 \end{tabular}
+\caption{Comparison of different Statistical Measures of Datasets I-IV}
 \end{figure}
 
 \subsection{Plotting Data}
@@ -140,23 +141,35 @@ for i in range(4):
   plt.savefig('dataset{}.png'.format(i+1))
 \end{lstlisting}
 
-In so doing, we get the following interesting results (Figure~\ref{fig:1}):
+In so doing, we get the following interesting results (Figure~\ref{fig:plots}):
 
 \begin{figure}[ht]
 \centering
-\subfloat[Dataset I]{\label{fig:I}\includegraphics[width=0.45\linewidth]{dataset1.png}}\qquad
-\subfloat[Dataset II]{\label{fig:II}\includegraphics[width=0.45\linewidth]{dataset2.png}}\\
-\subfloat[Dataset III]{\label{fig:III}\includegraphics[width=0.45\textwidth]{dataset3.png}}\qquad%
-\subfloat[Dataset IV]{\label{fig:IV}\includegraphics[width=0.45\textwidth]{dataset4.png}}%
+\subfloat[Dataset I]{\label{fig:I}\includegraphics[width=0.45\linewidth]{dataset-1.png}}\qquad
+\subfloat[Dataset II]{\label{fig:II}\includegraphics[width=0.45\linewidth]{dataset-2.png}}\\
+\subfloat[Dataset III]{\label{fig:III}\includegraphics[width=0.45\textwidth]{dataset-3.png}}\qquad%
+\subfloat[Dataset IV]{\label{fig:IV}\includegraphics[width=0.45\textwidth]{dataset-4.png}}%
 \caption{Plot of Datasets I-IV — X against Y with Lin. Reg.}
-\label{fig:1}
+\label{fig:plots}
 \end{figure}
 
 \subsection{Interpretation}
 
-Upon examination of the computed statistical measures (std, variance, cov, etc.), the naive conclusion would be that each dataset contains extremely similar data and that similar conclusions could be drawn from each. For instance, the $r^2$ value for each, $0.67$, indicates that there is a weak-to-moderate, positive correlation between the variables, and might imply that linear fits to each dataset would have a similar degree of inaccuracy. However, this notion is \textit{categorically refuted} on even a cursory glance at the graphs. In Figure~\ref{fig:1}, we see that each dataset is very distinct in its scatterplot pattern. In Figure~\ref{fig:I}, its clear that the linear fit to the data indicates weak-moderate, positive correlation, with a healthy amount of deviation from the trendline. This graph's, the most straightforward of the four, statistical measures indicate helpful information about the data. For instance, the $r^2$ value of $0.67$ reinforces the weak, positive spread outlined above. Similarly, the covariance of $5.5$ and the variance $\sigma_x^2 = 11.0,\ \sigma_y^2 = 4.13$ reinforce the visual intuition of this dataset having a healthy amount of spread from the means $\bar{x}, \bar{y}$. 
+Upon examination of the computed statistical measures (std, variance, cov, etc.), the naive conclusion would be that each dataset contains extremely similar data and that similar conclusions could be drawn from each. For instance, the $r^2$ value for each, $0.67$, indicates that there is a weak-to-moderate, positive correlation between the variables, and might imply that linear fits to each dataset would have a similar degree of inaccuracy. However, this notion is \textit{categorically refuted} on even a cursory glance at the graphs. In Figure~\ref{fig:plots}, we see that each dataset is very distinct in its scatterplot pattern. In Figure~\ref{fig:I}, its clear that the linear fit to the data indicates weak-moderate, positive correlation, with a healthy amount of deviation from the trendline. This graph's, the most straightforward of the four, statistical measures indicate helpful information about the data. For instance, the $r^2$ value of $0.67$ reinforces the weak, positive spread outlined above. Similarly, the covariance of $5.5$ and the variance $\sigma_x^2 = 11.0,\ \sigma_y^2 = 4.13$ reinforce the visual intuition of this dataset having a healthy amount of spread from the means $\bar{x}, \bar{y}$. 
 As we transition to Figure~\ref{fig:II}, we see a markedly different trend in the data. Visually, the scatterplot indicates an quadratic trend in $x$, indicating that the $y$ values may vary as the negative square of $x$. Despite this, our linear trendlines (from a least squares regression) provides a line of 'best fit' equal to Figure~\ref{fig:I}. Additionally, the other statistical measures of dataset II are exactly equivalent to that of dataset I, despite the visual interpretation being different. For instance, one might interpret the $r^2$ value in Figure~\ref{fig:I} as indicating the moderate (seemingly random) variation from the trendline, whereas in Figure~\ref{fig:II}, we see the datapoints follow exactly the (not random) curve of a quadratic, despite still having the same $r^2$. If one were to perform a polynomial regression (perhaps taking the logarithm to linearize the polynomial exponent, then performing a least squares regression), the resulting trendcurve would likely be an extremely close fit to the data---a fact not illustrated by these statistical measures. 
 In Figure~\ref{fig:III}, we see a different outcome where, despite displaying a very linear trend, the computed statistics and trendline are greatly affected by a single outlier. Because of this, we see the trendline having the incorrect slope to match the (linear) trend in the rest of the data. Despite this outlier not being indicated in the computed statistical measures, viewing the graph demonstrates the highly linear relationship between x and y, which would be easily illustrated by removing the outlier or otherwise explaining it in the methodology. This fact highights the differnce between dataset III and dataset I, where, despite having the same statistical measures, Figure~\ref{fig:I} displays almost uniformly random deviation from the line of best fit compared to Figure~\ref{fig:III} which has a nicely behaved deviation given by the intersection of another trendline if the sole outlier were to be removed.
 In Figure~\ref{fig:IV}, we see how the 
+
+\section{Exploring Other Techniques}
+
+\begin{figure}[ht]
+\centering
+\subfloat[Dataset I]{\label{fig:rI}\includegraphics[width=0.45\linewidth]{dataset-res-1.png}}\qquad
+\subfloat[Dataset II]{\label{fig:rII}\includegraphics[width=0.45\linewidth]{dataset-res-2.png}}\\
+\subfloat[Dataset III]{\label{fig:rIII}\includegraphics[width=0.45\textwidth]{dataset-res-3.png}}\qquad%
+\subfloat[Dataset IV]{\label{fig:rIV}\includegraphics[width=0.45\textwidth]{dataset-res-4.png}}%
+\caption{Residuals Plot of Datasets I-IV — X against Y with Lin. Reg.}
+\label{fig:rplots}
+\end{figure}
 
 \end{document}

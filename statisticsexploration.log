@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.8.28) (preloaded format=pdflatex 2022.9.26)  26 SEP 2022 15:17
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.8.28) (preloaded format=pdflatex 2022.9.26)  26 SEP 2022 15:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -513,74 +513,86 @@ Underfull \hbox (badness 10000) in paragraph at lines 89--91
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 115.
 
-<dataset1.png, id=52, 433.62pt x 289.08pt>
-File: dataset1.png Graphic file (type png)
-<use dataset1.png>
-Package pdftex.def Info: dataset1.png  used on input line 148.
-(pdftex.def)             Requested size: 223.34712pt x 148.8977pt.
-<dataset2.png, id=54, 433.62pt x 289.08pt>
-File: dataset2.png Graphic file (type png)
-<use dataset2.png>
-Package pdftex.def Info: dataset2.png  used on input line 149.
-(pdftex.def)             Requested size: 223.34712pt x 148.8977pt.
-<dataset3.png, id=55, 433.62pt x 289.08pt>
-File: dataset3.png Graphic file (type png)
-<use dataset3.png>
-Package pdftex.def Info: dataset3.png  used on input line 150.
-(pdftex.def)             Requested size: 223.34712pt x 148.8977pt.
-<dataset4.png, id=56, 433.62pt x 289.08pt>
-File: dataset4.png Graphic file (type png)
-<use dataset4.png>
-Package pdftex.def Info: dataset4.png  used on input line 151.
-(pdftex.def)             Requested size: 223.34712pt x 148.8977pt.
-[2] [3 <./dataset1.png> <./dataset2.png> <./dataset3.png> <./dataset4.png>]
-(statisticsexploration.aux)
+<dataset-1.png, id=52, 462.528pt x 346.896pt>
+File: dataset-1.png Graphic file (type png)
+<use dataset-1.png>
+Package pdftex.def Info: dataset-1.png  used on input line 148.
+(pdftex.def)             Requested size: 223.34712pt x 167.51389pt.
+<dataset-2.png, id=54, 462.528pt x 346.896pt>
+File: dataset-2.png Graphic file (type png)
+<use dataset-2.png>
+Package pdftex.def Info: dataset-2.png  used on input line 149.
+(pdftex.def)             Requested size: 223.34712pt x 167.51389pt.
+<dataset-3.png, id=55, 462.528pt x 346.896pt>
+File: dataset-3.png Graphic file (type png)
+<use dataset-3.png>
+Package pdftex.def Info: dataset-3.png  used on input line 150.
+(pdftex.def)             Requested size: 223.34712pt x 167.51389pt.
+<dataset-4.png, id=56, 462.528pt x 346.896pt>
+File: dataset-4.png Graphic file (type png)
+<use dataset-4.png>
+Package pdftex.def Info: dataset-4.png  used on input line 151.
+(pdftex.def)             Requested size: 223.34712pt x 167.51389pt.
+[2]
+<dataset-res-1.png, id=89, 462.528pt x 346.896pt>
+File: dataset-res-1.png Graphic file (type png)
+<use dataset-res-1.png>
+Package pdftex.def Info: dataset-res-1.png  used on input line 167.
+(pdftex.def)             Requested size: 223.34712pt x 167.51389pt.
+<dataset-res-2.png, id=90, 462.528pt x 346.896pt>
+File: dataset-res-2.png Graphic file (type png)
+<use dataset-res-2.png>
+Package pdftex.def Info: dataset-res-2.png  used on input line 168.
+(pdftex.def)             Requested size: 223.34712pt x 167.51389pt.
+<dataset-res-3.png, id=91, 462.528pt x 346.896pt>
+File: dataset-res-3.png Graphic file (type png)
+<use dataset-res-3.png>
+Package pdftex.def Info: dataset-res-3.png  used on input line 169.
+(pdftex.def)             Requested size: 223.34712pt x 167.51389pt.
+<dataset-res-4.png, id=92, 462.528pt x 346.896pt>
+File: dataset-res-4.png Graphic file (type png)
+<use dataset-res-4.png>
+Package pdftex.def Info: dataset-res-4.png  used on input line 170.
+(pdftex.def)             Requested size: 223.34712pt x 167.51389pt.
+ [3 <./dataset-1.png> <./dataset-2.png> <./dataset-3.png> <./dataset-4.png>] [4
+ <./dataset-res-1.png> <./dataset-res-2.png> <./dataset-res-3.png> <./dataset-r
+es-4.png>] (statisticsexploration.aux)
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
-Package rerunfilecheck Info: File `statisticsexploration.out' has not changed.
-(rerunfilecheck)             Checksum: AAA8CB10CFC10557B1C62C08C20E1CF9;1087.
+
+Package rerunfilecheck Warning: File `statisticsexploration.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `statisticsexploration.out':
+(rerunfilecheck)             Before: AAA8CB10CFC10557B1C62C08C20E1CF9;1087
+(rerunfilecheck)             After:  3AC6BA6A2C5750BF6308EBC57A17E36B;1266.
  ) 
 Here is how much of TeX's memory you used:
- 13940 strings out of 475389
- 219354 string characters out of 2786818
+ 13980 strings out of 475389
+ 220113 string characters out of 2786818
  776856 words of memory out of 3000000
- 35113 multiletter control sequences out of 15000+600000
+ 35146 multiletter control sequences out of 15000+600000
  478311 words of font info for 62 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  72i,11n,79p,1271b,1287s stack positions out of 10000i,1000n,20000p,200000b,80000s
-
-pdfTeX warning (dest): name{subfigure.2.4} has been referenced but does not exi
-st, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subfigure.2.3} has been referenced but does not exi
-st, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subfigure.2.2} has been referenced but does not exi
-st, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subfigure.2.1} has been referenced but does not exi
-st, replaced by a fixed one
-
-<C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Program 
-Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX
-/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Program Files/MiKTeX/fonts/typ
-e1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/am
-sfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cm
-mi6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/P
-rogram Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/
-MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX/fonts/
-type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX/fonts/type1/public/
-amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cm
-r9.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/P
-rogram Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files
-/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on statisticsexploration.pdf (3 pages, 227930 bytes).
+<C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Progra
+m Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKT
+eX/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Program Files/MiKTeX/fonts/t
+ype1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/
+amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/
+cmmi6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:
+/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program File
+s/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX/font
+s/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX/fonts/type1/publi
+c/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/
+cmr9.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:
+/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Fil
+es/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on statisticsexploration.pdf (4 pages, 311265 bytes).
 PDF statistics:
- 174 PDF objects out of 1000 (max. 8388607)
- 33 named destinations out of 1000 (max. 500000)
- 85 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 188 PDF objects out of 1000 (max. 8388607)
+ 36 named destinations out of 1000 (max. 500000)
+ 105 words of extra memory for PDF output out of 10000 (max. 10000000)
 
